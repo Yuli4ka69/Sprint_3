@@ -75,8 +75,3 @@ test_06_click_on_stellar_burgers_logo.py: Проверка перехода на
 ```bash
 pytest tests/
 ```
-Чтобы запустить тесты в определенном порядке, убедитесь, что плагин pytest-order установлен. Например:
-
-```bash
-pytest tests/ --order
-```
