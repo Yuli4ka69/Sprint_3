@@ -4,10 +4,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from locators import PERSONAL_ACCOUNT_BUTTON, LOGOUT_BUTTON, LOGIN_PAGE_URL
 from urls import URLs
 
-@pytest.mark.parametrize("authorized_user", [URLs.BASE_URL], indirect=True)
 class TestLogoutViaPersonalAccount:
     """Тесты для проверки выхода через Личный кабинет и редиректа на страницу входа"""
 
+    @pytest.mark.parametrize("authorized_user", [URLs.BASE_URL], indirect=True)
     def test_logout_via_personal_account(self, authorized_user):
         """Проверка выхода через Личный кабинет и редиректа на страницу входа."""
         wait = WebDriverWait(authorized_user, 30)

@@ -1,2 +1,2 @@
-user_email = 'yulia_zhirova_15_781@mail.ru'
-user_password = ':3k?;^bc'
+user_email = 'yulia_zhirova_15_866@mail.ru'
+user_password = '{T?>etDv'

@@ -8,10 +8,10 @@ from locators import (
 from urls import URLs
 
 
-@pytest.mark.parametrize("authorized_user", [URLs.BASE_URL], indirect=True)
 class TestNavigationAfterLogin:
     """Тесты для проверки навигации и элементов интерфейса после авторизации"""
 
+    @pytest.mark.parametrize("authorized_user", [URLs.BASE_URL], indirect=True)
     def test_click_on_stellar_burgers_logo(self, authorized_user):
         """Проверка клика на логотип Stellar Burgers после авторизации."""
         wait = WebDriverWait(authorized_user, 30)
@@ -20,6 +20,7 @@ class TestNavigationAfterLogin:
         main_header = wait.until(EC.visibility_of_element_located(MAIN_HEADER))
         assert main_header.is_displayed(), "Заголовок главной страницы не найден."
 
+    @pytest.mark.parametrize("authorized_user", [URLs.BASE_URL], indirect=True)
     def test_transition_to_constructor_after_login(self, authorized_user):
         """Проверка перехода в конструктор после авторизации."""
         wait = WebDriverWait(authorized_user, 30)
@@ -29,6 +30,7 @@ class TestNavigationAfterLogin:
         constructor_header = wait.until(EC.visibility_of_element_located(MAIN_HEADER))
         assert constructor_header.is_displayed(), "Заголовок 'Конструктор' не найден на странице."
 
+    @pytest.mark.parametrize("authorized_user", [URLs.BASE_URL], indirect=True)
     def test_go_to_personal_account_after_login(self, authorized_user):
         """Проверка перехода в 'Личный кабинет' после авторизации."""
         wait = WebDriverWait(authorized_user, 30)
